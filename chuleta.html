@@ -139,16 +139,17 @@
         function pintarTabla() {
             for (let i = 0; i < (chuleta.length); i++) {
                 for (let j = 0; j < (chuleta[i].length); j++) {
+                    setTimeout(()=>{
                     if (chuleta[i][j] == "X") {
                         document.getElementById(`id_${i}_${j}`).style.backgroundColor = "pink";
                     } else {
                         document.getElementById(`id_${i}_${j}`).style.backgroundColor = "lightblue";
                     }
-                    document.getElementById(`id_${i}_${j}`).innerHTML = chuleta[i][j];
+                        document.getElementById(`id_${i}_${j}`).innerHTML = chuleta[i][j];
+                    },3000)
                 }
             }
         }
     </script>
 </body>
-
 </html>

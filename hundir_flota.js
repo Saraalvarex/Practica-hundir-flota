@@ -9,7 +9,7 @@ let filas = 10;
 let columnas = 10;
 let cantidad;
 let tamanio;
-const tablaPintar = document.querySelector("#tabla_pintar");
+//const tablaPintar = document.querySelector("#tabla_pintar");
 
 //Funciones
 function crearChuleta() {
@@ -61,7 +61,6 @@ function ubicarBarcos(clave) {
   }
 }
 
-
 function pintarTabla() {
   /* Inicialización con datos */
   //Recorro array multidimensional
@@ -78,17 +77,15 @@ function pintarTabla() {
 }
 
 function demostracionVisual() {
-  
   let pagina1 = window.open("chuleta.html", "Chuleta", "width=900px, height=800px");
-    
 }
 
 function VerInformacionBarcos() {
   let pagina2 = window.open("", "Informacion", "width=400px, height=200px");
   
-  let iterableBarcos = tiposBarcos[Symbol.iterator]();
+  //let iterableBarcos = tiposBarcos[Symbol.iterator]();
 
-  let veces = tiposBarcos.size;
+  //let veces = tiposBarcos.size;
   pagina2.document.body.innerHTML+="INFORMACION SOBRE EL JUEGO:"+"<br><br>"
   /*
   for (let i = 0; i < veces; i++) {
@@ -103,15 +100,11 @@ function VerInformacionBarcos() {
   }
 }
 
-
 //Prueba
 window.onload = function () {
   crearChuleta();
-  //setInterval(() => {
   ubicarBarcos("lanchas");
   ubicarBarcos("portaAviones");
   pintarTabla();
-  //}, 3000);
   //dibujarBarcos(tiposBarcos, tamanoBarcos, numeroBarcos);
 }
-
