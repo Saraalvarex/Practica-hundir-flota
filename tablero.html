@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="hundir_flota.js"></script>
-        <script src="persona.js"></script>
-        <link rel="stylesheet" type="text/css" href="estilos.css" media="screen" />
+        <script src="hundir_flota.js" defer></script>
+        <script src="persona.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="tablero.css" media="screen" />
+        
     </head>
     <body>
         
@@ -130,9 +131,23 @@
             </tr>
         </table>
         <!-- meter botones asociados a la funcion mostrar-->
-        <button onclick="demostracionVisual()">Ver DEMO colocación</button>
-        <button onclick="VerInformacionBarcos()">Ver información de los barcos</button>
-        <button onclick="autor1.VerInformacion()">Ver información del autor</button>
-        <button onclick="jugador1.VerInformacion()">Ver información del jugador</button>
+        <button class="boton" onclick="demostracionVisual()">Ver DEMO colocación</button>
+        <button class="boton" onclick="VerInformacionBarcos()">Ver información de los barcos</button>
+        <button class="boton" onclick="autor1.VerInformacion()">Ver información del autor</button>
+        <button class="boton" onclick="jugador1.VerInformacion()">Ver información del jugador</button>
+        <div>
+            <table class="tablaPuntuacion">
+                <tr>
+                    <th id="puntuacion">Puntuación</th>
+                    <th id="aciertos">Aciertos</th>
+                    <th id="fallos">Fallos</th>
+                </tr>
+                <tr>
+                    <td id="idPuntuacion"></td>
+                    <td id="idAciertos"></td>
+                    <td id="idFallos"></td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>

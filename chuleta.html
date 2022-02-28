@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="estilos.css" media="screen" />
-   
+    <link rel="stylesheet" type="text/css" href="tablero.css" media="screen" />
 </head>
 <body>
     <table id="tabla" border="1">
@@ -134,9 +133,9 @@
         */
         let chuleta=window.opener.chuleta
         //console.log(chuleta)
-        pintarTabla()
-
-        function pintarTabla() {
+        pintarTablaChuleta()
+        console.log(chuleta)
+        function pintarTablaChuleta() {
             for (let i = 0; i < (chuleta.length); i++) {
                 for (let j = 0; j < (chuleta[i].length); j++) {
                     setTimeout(()=>{

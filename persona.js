@@ -1,4 +1,5 @@
 let pagina2 
+
 //Clase persona
 class Persona {
     //1.Constructor
@@ -41,9 +42,7 @@ class Persona {
         //pagina2.document.body.innerHTML+="<br>"+"INFORMACION:"+"<br><br>"
         //Al poner toString() aquí, me coje el toString de la clase hija por eso
         //los he puesto de esta manera        *                     *
-        pagina2.document.body.innerHTML+= "Nombre: "+this.nombre +  ", apellidos: "+ this.apellidos;
     }
-    
 }
 
 //PROTOTYPE    
@@ -78,6 +77,7 @@ class Autor extends Persona {
     set version(valor) {
         this._version = valor;
     }
+
     //Metodo toString me devuelve... (concatena)
     toString() {
         super.toString();
@@ -90,6 +90,7 @@ class Autor extends Persona {
     
     VerInformacion(){
         super.VerInformacion();
+        pagina2.document.body.innerHTML+="Nombre: "+this._nombre+", apellidos: "+this._apellidos+", edad: "+this._edad;
         pagina2.document.body.innerHTML+=", "+this.toString()+"<br><br>"
     }
 
@@ -106,20 +107,44 @@ class Autor extends Persona {
 //Clase hija jugador
 class Jugador extends Persona {
     //3.Constructor de jugador
-    constructor(nombre, apellidos, edad, id) {
+    constructor(nombre, apellidos, edad, id, puntuacion, aciertos, fallos) {
         super(nombre, apellidos, edad)
         this._id = id;
-        //this.puntacion=puntuacion;
-        //this.aciertos=aciertos;
-        //this.fallos=fallos;
+        this._puntuacion = puntuacion;
+        this._aciertos = aciertos;
+        this._fallos = fallos;
     }
 
     get id() {
         return this._id;
     }
 
+    get aciertos() {
+        return this._aciertos;
+    }
+
+    get fallos() {
+        return this._fallos;
+    }
+
+    get puntuacion() {
+        return this._puntuacion;
+    }
+
     set id(valor) {
         this._id = valor;
+    }
+
+    set aciertos(valor) {
+        this._aciertos = valor;
+    }
+
+    set fallos(valor) {
+        this._fallos= valor;
+    }
+
+    set puntuacion(valor) {
+        this._puntuacion = puntuacion;
     }
 
     toString() {
@@ -130,42 +155,50 @@ class Jugador extends Persona {
         )
     }
 
-    /*para la puntuacion
+    //para la puntuacion
     valueOf() {
         return this.puntuacion;
     }
-    */
+    º   
     VerInformacion(){
         super.VerInformacion();
-        pagina2.document.body.innerHTML+=", "+this.toString()+"<br><br>"
+        pagina2.document.body.innerHTML+="Nombre: "+localStorage.getItem("nombre")+" ,apellidos: "+localStorage.getItem("apellidos")+
+        " ,edad: "+localStorage.getItem("edad")+",puntuacion: "+localStorage.getItem("puntuacion")
+        +", Aciertos: "+localStorage.getItem("aciertos")+", Fallos: "+localStorage.getItem("fallos")
     }
 
     completarInfoJugador(){
-        this._nombre = "Arturo";
-        this._apellidos = "López Gomez";
-        this._edad = "15";
-        this._id = "02";
+        this._nombre = formulario.elements["idNombre"].value;
+        this._apellidos = formulario.elements["idApellidos"].value;
+        this._edad = formulario.elements["idEdad"].value;
+        this._id = "01";
+        this._puntuacion = formulario.elements["idPuntuacion"].value;
+        this._aciertos = formulario.elements["idAciertos"].value;
+        this._fallos = formulario.elements["idFallos"].value;
     }
 
     //Metodo privado que dependiendo de la edad me imprime una cosa u otra
     #mayorEdad(edad) {
         if (edad > 18) {
-            return "Tienes "+edad+" años, eres mayor de edad, puedes jugar!"
+            return "Tienes "+edad+" años, eres mayor de edad, puedes jugar!";
         } else {
-            return "Tienes "+edad+" años, eres menor de edad, no puedes jugar"
+            return "Tienes "+edad+" años, eres menor de edad, no puedes jugar";
         }
     }
 }
 
+
 //Prueba persona
-    //                 (nombre, apellidos, edad, id, puntuacion, aciertos, fallos)
+
+    let autor1= new Autor()
+    autor1.completarInfoAutor()
+
     let jugador1= new Jugador()
     jugador1.completarInfoJugador()
-    //                 (nombre, apellidos, edad, github, lenguaje, version)
-    let autor1= new Autor('Ana', 'Vargas', '33', 'anaconda34', 'JS', '3.0')
-    autor1.completarInfoAutor()
+    
     //Me devuelve true si la edad de autor1 es mayor que la de jugador1 (valueOf)
     console.log(autor1>jugador1)
+    
     autor1.VerInformacionProto()
+    jugador1.VerInformacionProto()
 
-  

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />    
+
+    <link type="text/css" rel="stylesheet" href="styles.css"/>
+    <script defer type="text/javascript" src="javascript.js" defer> </script>
+</head>
+<body>
+<fieldset>
+<div>
+    <h1>HUNDIR LA FLOTA</h1>
+    <form name="formulario" id="idFormulario" action="./tablero.html" method="get">
+        <h2 id="h2">Registro</h2>
+        <div>
+        <div>
+            <label for="idNombre">Nombre:</label>
+            <input type="text" name="nombre" id="idNombre"/>            
+            <spam id="idNombreError"class="errorSpam"></spam>
+        </div>
+            <br>
+            <br>
+        <div>
+            <label for="idApellidos">Apellidos:</label>
+            <input type="text" name="apellidos" id="idApellidos" />
+            <spam id="idApellidosError" class="errorSpam"></spam>
+        </div>
+            <br>
+            <br>
+        <div class="form-group">
+            <label for="idEdad">Edad:</label>            
+            <input type="number" id="idEdad" name="edad" min="18" max="100">
+            <spam id="idEdadError" class="errorSpam"></spam>
+        </div>
+            <input type="hidden" name="puntuacion" value=0 id="idPuntuacion"/>
+            <input type="hidden" name="aciertos" value=0 id="idAciertos"/>    
+            <input type="hidden" name="fallos" value=0 id="idFallos"/>        
+            <br>      
+            <br>   
+            <input type="reset" class="boton" name="limpiar" id="idLimpiar" value="Limpiar" />
+            <input type="submit" class="boton" name="enviar" id="idEnviar" class="btn btn-primary" value="Enviar"/>
+        </div>
+        </form>
+</div>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/*FORMULARIO*/
+table {
+	width: 50%;
+	height: 300px;
+}
+.centrar{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+spam {
+	color:red;
+}
+
+/*JUEGO*/
+.boton{
+	font-family:'Montserrat',sans-serif;
+    padding:8px 12px;
+    margin:8px 0 0;
+    border:2px solid #78788c;
+    background:0;color:#5a5a6e;
+    cursor:pointer;
+	transition:all .3s;
+}
+button:hover{
+    background:#78788c;
+    color:#fff
+}
+
+.tablaPuntuacion{
+    width:300px;
+    height:100px;
+	margin-top: 20px;
+    background:white;
+	text-align: justify;
+	justify-content: center;
+    border-radius:8px;
+    box-shadow:0 0 40px -5px #59ABE3;
+    padding:20px 20px;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+    position: relative;
+}
